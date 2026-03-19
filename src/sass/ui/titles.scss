@@ -2,8 +2,14 @@
 @use "/src/sass/base/mixins.scss" as *;
 
 .title-h1-italic {
-@include title;
-font-size: 24px;
-font-style: italic;
-text-align: center;
+    @include title;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+}
+
+@media screen and (min-width: 1920px) {
+    .title-h1-italic {
+        font-size: 32px;
+    }
 }
