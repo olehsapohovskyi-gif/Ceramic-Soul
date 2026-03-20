@@ -1,0 +1,30 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.git {
+    padding-top: 60px;
+
+    &__wrapper {
+        margin-top: 60px;
+    }
+
+    &__img {
+        display: none;
+    }
+
+    &__fieldset {
+        border: none;
+
+    }
+
+    &__label {
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 28px;
+        color: $dark;
+    }
+    &__input {
+        width: 100%;
+    }
+
+}
