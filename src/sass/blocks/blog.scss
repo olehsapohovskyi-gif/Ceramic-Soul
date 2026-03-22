@@ -1,0 +1,50 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.blog {
+    padding-top: 50px;
+
+    &__title {
+        margin-top: 60px;
+    }
+
+    &__title-h3 {
+        text-align: left;
+    }
+
+    &__card {
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+        background: $light;
+        border: 1px solid $dark;
+    }
+    &__img {
+            max-inline-size: calc(100% + 2px);
+            transform: translateX(-1px) translateY(-1px);
+
+    }
+
+    &__wrapper {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+    }
+
+    &__data {
+        &-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 25px 25px 0 25px;
+        }
+    }
+
+    &__text {
+        padding: 25px 25px;
+        font-weight: 400;
+        font-size: 16px;
+        color: $dark;
+        line-height: normal;
+        font-style: normal;
+    }
+}
