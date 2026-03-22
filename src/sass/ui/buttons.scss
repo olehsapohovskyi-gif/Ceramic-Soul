@@ -22,11 +22,27 @@
         outline: 1px solid $ceramic ;
         border: 1px solid $ceramic ;
     }
+
     &:disabled {
         color: $ui-disabled ;
         border: 1px solid $ui-disabled;
     }
 
+}
+
+.btn-submit {
+    @include button;
+    width: 90px;
+    height: 40px;
+    color: $light;
+    border: 1px solid $light;
+    border-radius: 2px;
+    font-size: 16px;
+
+    &:disabled {
+        color: $ui-disabled;
+        border: 1px solid $ui-disabled;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -49,6 +65,7 @@
             outline: 1px solid $ceramic ;
             border: 1px solid $ceramic ;
         }
+
         &:hover {
             color: $ceramic;
             border: 1px solid $ceramic;

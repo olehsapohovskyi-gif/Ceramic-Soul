@@ -1,0 +1,165 @@
+@use "/src/sass/base/variables.scss" as *;
+
+.footer {
+    background: $dark;
+    padding: 50px 0;
+
+    &_spaced {
+        margin-top: 75px;
+    }
+
+
+    a {
+        color: $light;
+        text-decoration: none;
+    }
+
+    &__header {
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: $light;
+        line-height: normal;
+    }
+
+    &__text {
+        color: $light;
+        font-weight: 400;
+        font-size: 16px;
+
+        &_spaced {
+            margin-top: 40px;
+        }
+    }
+
+    &__form {
+        margin-top: 40px;
+    }
+
+    &__input {
+        display: block;
+        width: 293px;
+        border: none;
+        box-shadow: none;
+        padding-bottom: 15px;
+        background-color: transparent;
+        border-bottom: 1px solid $ui-active;
+        font-weight: 400;
+        line-height: normal;
+        font-style: normal;
+        font-size: 14px;
+        color: $ui-active;
+
+        &::placeholder {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: $ui-active;
+        }
+
+    }
+
+    &__check-block {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        color: $light;
+        font-size: 14px;
+        line-height: 28px;
+
+        a {
+            color: #a22dc6;
+            text-decoration: none;
+            margin-left: 3px;
+        }
+
+    }
+
+    &__checkbox {
+        margin-right: 15px;
+        border: 1px solid $light;
+        border-radius: 2px;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background-color: transparent; 
+        cursor: pointer;
+        position: relative;
+
+        &:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 0;
+            left: 3px;
+            color: #a22dc6; 
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+        &__form-btn {
+            margin-top: 20px;
+        }
+
+        &__links {
+            display: flex;
+            margin-top: 40px;
+            column-gap: 66px;
+            row-gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        &__nav {
+            margin-top: 40px;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 0;
+                list-style-type: none;
+            }
+        }
+
+        &__link {
+            a {
+                font-weight: 400;
+                font-size: 16px;
+                color: $light;
+                text-decoration: none;
+                line-height: normal;
+            }
+        }
+
+        &__social {
+            margin-top: 40px;
+
+            &-block {
+                display: flex;
+                padding: 0;
+                gap: 10px;
+                margin-top: 40px;
+                list-style-type: none;
+
+                a {
+                    display: block;
+                    color: $light;
+                    text-decoration: none;
+                    font-size: 24px;
+                }
+
+                span::before {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__copyright {
+            margin-top: 40px;
+            font-weight: 400;
+            font-size: 14px;
+            color: $light;
+            text-align: center;
+        }
+
+    }
