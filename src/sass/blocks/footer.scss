@@ -4,6 +4,11 @@
     background: $dark;
     padding: 50px 0;
 
+    .just-validate-error-field {
+        border: none;
+        outline: 1px solid $ui-error;
+    }
+
     &_spaced {
         margin-top: 75px;
     }
@@ -49,27 +54,6 @@
         font-style: normal;
         font-size: 14px;
         color: $ui-active;
-
-        &::placeholder {
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            color: $ui-active;
-        }
-
-        &:focus {
-            outline: none;
-            border-bottom: 1px solid #a22dc6;
-        }
-
-        &:focus:invalid {
-            border-bottom: 1px solid $ui-error;
-        }
-
-        &:focus:invalid::placeholder {
-            color: $ui-error;
-        }
 
     }
 

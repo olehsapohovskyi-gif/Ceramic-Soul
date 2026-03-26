@@ -1,22 +1,23 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import JustValidate from 'just-validate';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "/src/sass/style.scss";
 
 const burger = document.querySelector(".burger"),
-	close = document.querySelector(".header__menu-close"),
-	menu = document.querySelector(".header__menu");
+  close = document.querySelector(".header__menu-close"),
+  menu = document.querySelector(".header__menu");
 
 burger.addEventListener("click", () => {
-	menu.classList.add("header__menu_active");
-	document.body.style.overflow = "hidden";
+  menu.classList.add("header__menu_active");
+  document.body.style.overflow = "hidden";
 });
 
 close.addEventListener("click", () => {
-	menu.classList.remove("header__menu_active");
-	document.body.style.overflow = "";
+  menu.classList.remove("header__menu_active");
+  document.body.style.overflow = "";
 });
 
 
@@ -44,27 +45,99 @@ try {
     },
     modules: [Navigation, Pagination],
   });
-} catch (e) {}
+} catch (e) { }
 
 try {
-	const tabs = document.querySelectorAll(".catalog__tab");
-	const contents = document.querySelectorAll(".catalog__content-item");
+  const tabs = document.querySelectorAll(".catalog__tab");
+  const contents = document.querySelectorAll(".catalog__content-item");
 
-	tabs.forEach((tab, index) => {
-		tab.addEventListener("click", () => {
-			// Удаляем активный класс у всех табов и контента
-			tabs.forEach((t) => t.classList.remove("catalog__tab_active"));
-			contents.forEach((c) => (c.style.display = "none"));
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      // Удаляем активный класс у всех табов и контента
+      tabs.forEach((t) => t.classList.remove("catalog__tab_active"));
+      contents.forEach((c) => (c.style.display = "none"));
 
-			// Добавляем активный класс к нажатому табу и показываем соответствующий контент
-			tab.classList.add("catalog__tab_active");
-			contents[index].style.display = "flex";
-		});
-	});
+      // Добавляем активный класс к нажатому табу и показываем соответствующий контент
+      tab.classList.add("catalog__tab_active");
+      contents[index].style.display = "flex";
+    });
+  });
 
-	// Показываем первый контент при загрузке
-	contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
-} catch (e) {}
+  // Показываем первый контент при загрузке
+  contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
+} catch (e) { }
 
+try {
+  const validator = new JustValidate(".git__form");
 
+  validator
+    .addField("#name", [
+      {
+        rule: "required",
+        errorMessage: "Please fill the name",
+      },
+      {
+        rule: "minLength",
+        value: 2,
+        errorMessage: "Minimum 2 chars!",
+      },
+    ])
+    .addField("#email", [
+      {
+        rule: "required",
+      },
+      {
+        rule: "email",
+      },
+    ])
+    .addField(
+      "#question",
+      [
+        {
+          rule: "required",
+        },
+        {
+          rule: "minLength",
+          value: 5,
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#question")
+          .parentElement.querySelector(".error-message"),
+      }
+    )
+    .addField(
+      "#checkbox",
+      [
+        {
+          rule: "required",
+        },
+      ],
+      {
+        errorsContainer: document
+          .querySelector("#checkbox")
+          .parentElement.parentElement.querySelector(".checkbox-error-message"),
+      }
+    );
+} catch (e) { }
 
+try {
+  const validfooter = new JustValidate(".footer__form");
+
+  validfooter
+    .addField("#email", [
+      {
+        rule: "required",
+        errorMessage: "Please fill your email!",
+      },
+      {
+        rule: "email",
+      },
+    ],
+      {
+        errorsContainer: document
+          .querySelector("#email")
+          .parentElement.parentElement.querySelector(".error-email"),
+      });
+} catch (e) { }
